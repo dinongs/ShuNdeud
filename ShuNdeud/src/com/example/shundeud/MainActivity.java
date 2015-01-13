@@ -3,7 +3,11 @@ package com.example.shundeud;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -37,12 +41,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		search = (EditText) findViewById(R.id.search);
 		screen=(RelativeLayout)findViewById(R.id.screen);
-		Button btn1 = (Button)findViewById(R.id.button1);
+		Button btn1 = (Button)findViewById(R.id.btn);
         btn1.setOnClickListener(new Button.OnClickListener(){
         	public void onClick(View v){
-        		Intent intent = new Intent();
-        		intent.setClass(MainActivity.this,MListView.class);
-        		MainActivity.this.startActivity(intent);
+        	//	Intent intent = new Intent();
+        	//	intent.setClass(MainActivity.this,MListView.class);
+        	//	MainActivity.this.startActivity(intent);
+        		Web w=new Web();
+        		w.Test();
         	//	MainActivity.this.finish();
         	}
         });
@@ -50,7 +56,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				Intent intent=new Intent();
 				intent.setClass(MainActivity.this, MListView.class);
 				startActivity(intent);
@@ -69,10 +75,10 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		  if (v.getId() == R.id.screen) {
               InputMethodManager imm = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);  
-              search.setCursorVisible(false);//Ê§È¥¹â±ê
+              search.setCursorVisible(false);//Ê§È¥ï¿½ï¿½ï¿½
               imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
       }
 		
@@ -97,4 +103,5 @@ public class MainActivity extends Activity implements OnClickListener {
 	   
 	     return super.onKeyDown(keyCode, event);  
 	 } 
+
 }

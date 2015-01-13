@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +16,7 @@
         android:theme="@style/AppTheme" >
         <activity
            
-              android:name=".MListView"
+              android:name="com.example.shundeud.MainActivity"
             android:label="@string/app_name" 
            
           >
@@ -27,7 +28,7 @@
             </intent-filter>
         </activity>
          <activity
-              android:name="com.example.shundeud.MainActivity"
+              android:name=".MListView"
               />
           <activity
               android:name=".Test"
